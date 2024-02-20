@@ -10,7 +10,7 @@ optdepends=('yay-bin: AUR support'
 	    'flatpak: Flatpak support'
 	    'snapd: snap support'
 	    )
-source=("git+https://github.com/StratOS-Linux/${pkgname}.git")
+source=("git+${url}.git")
 sha1sums=('SKIP')
 
 package() {
