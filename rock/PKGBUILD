@@ -1,6 +1,6 @@
 pkgname=rock
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc="Package manager wrapper for StratOS"
 arch=("any")
 url="https://github.com/StratOS-Linux/rock"
