@@ -1,12 +1,12 @@
 pkgname=grab
 pkgver=1.0
-pkgrel=0
+pkgrel=2
 pkgdesc="System info script for StratOS"
 arch=("any")
-url="https://github.com/zstg/grab"
+url="https://github.com/mradigen/grab"
 license=('GPL')
 depends=('bash' 'gcc' 'make')
-source=("git+https://github.com/zstg/${pkgname}.git")
+source=("git+${url}.git")
 sha1sums=('SKIP')
 
 package() {
