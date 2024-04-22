@@ -17,12 +17,13 @@ JIT="NO"          # Disable native just-in-time compilation with libgccjit avail
 pkgname=stratmacs
 pkgver=29.3
 _pkgver_major=${pkgver/.*}
-pkgrel=1
+pkgrel=2
 pkgdesc="The extensible, customizable, self-documenting real-time display editor (Lucid toolkit version with native compilation)"
 arch=('x86_64')
 url="http://www.gnu.org/software/emacs/emacs.html"
 license=('GPL3')
 depends=(
+    libxpm
     tree-sitter
     ttf-jetbrains-mono-nerd
     git
@@ -91,10 +92,10 @@ build() {
 package() {
   cd $srcdir/emacs-$pkgver
   make DESTDIR="$pkgdir" install
-  mkdir -p ~/.config
-  [[ -d ~/.config/emacs ]] && mv ~/.config/emacs ~/.config/emacs.bak
-  [[ -d ~/.emacs.d ]] && mv ~/.emacs.d ~/.config/emacs.d.bak
-  git clone https://github.com/StratOS-Linux/Stratmacs.git $HOME/.config/emacs
+  # mkdir -p ~/.config
+  # [[ -d ~/.config/emacs ]] && mv ~/.config/emacs ~/.config/emacs.bak
+  # [[ -d ~/.emacs.d ]] && mv ~/.emacs.d ~/.config/emacs.d.bak
+  # git clone https://github.com/StratOS-Linux/Stratmacs.git $HOME/.config/emacs
   # fix user/root permissions on usr/share files
   # find "$pkgdir"/usr/share/emacs/$pkgver -exec chown root:root {} \;
 }
